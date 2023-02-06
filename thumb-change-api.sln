@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mtb-race-api", "mtb-race-api\mtb-race-api.csproj", "{FF8F49EB-D5D5-4C51-8855-49EFAC23557D}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7CCDABA3-375F-4FC1-A0DB-B6F2633CF925}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF8F49EB-D5D5-4C51-8855-49EFAC23557D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF8F49EB-D5D5-4C51-8855-49EFAC23557D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF8F49EB-D5D5-4C51-8855-49EFAC23557D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF8F49EB-D5D5-4C51-8855-49EFAC23557D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CCDABA3-375F-4FC1-A0DB-B6F2633CF925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CCDABA3-375F-4FC1-A0DB-B6F2633CF925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CCDABA3-375F-4FC1-A0DB-B6F2633CF925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CCDABA3-375F-4FC1-A0DB-B6F2633CF925}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0541C14E-0121-4A41-8E0F-D3EE87135A73}
+	EndGlobalSection
+EndGlobal

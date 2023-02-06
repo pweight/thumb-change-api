@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  mtb-race-api:
+    image: ${DOCKER_REGISTRY-}mtbraceapi
+    build:
+      context: .
+      dockerfile: mtb-race-api/Dockerfile
