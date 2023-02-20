@@ -1,17 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using mtb_race_api.Services;
+using thumb_change_api.Services;
+using thumb_change_api.Models;
 
-namespace mtb_race_api.Controllers;
+namespace thumb_change_api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
 public class VideosController : ControllerBase
 {
-    private static readonly string[] Summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
     private readonly ILogger<VideosController> _logger;
     private readonly IVideosService _videosService;
 
@@ -22,9 +18,8 @@ public class VideosController : ControllerBase
     }
 
     [HttpGet(Name = "GetVideos")]
-    public async Task Get()
+    public async Task<ActionResult<List<VideoInfo>>> Get()
     {
-        await _videosService.GetVideosAsync();
+        return await _videosService.GetVideosAsync();
     }
 }
-

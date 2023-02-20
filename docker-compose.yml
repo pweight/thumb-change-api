@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  mtb-race-api:
-    image: ${DOCKER_REGISTRY-}mtbraceapi
+  thumb-change-api:
+    image: ${DOCKER_REGISTRY-}thumbchangeapi
     build:
       context: .
-      dockerfile: mtb-race-api/Dockerfile
+      dockerfile: thumb-change-api/Dockerfile

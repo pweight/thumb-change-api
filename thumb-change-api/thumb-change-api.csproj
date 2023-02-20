@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>mtb_race_api</RootNamespace>
+    <RootNamespace>thumb_change_api</RootNamespace>
     <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
     <UserSecretsId>25a210bd-e223-4278-a760-6683da3cc791</UserSecretsId>
   </PropertyGroup>

@@ -1,4 +1,4 @@
-﻿using mtb_race_api.Services;
+﻿using thumb_change_api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

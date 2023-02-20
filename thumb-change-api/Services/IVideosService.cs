@@ -1,9 +1,10 @@
 ﻿using System;
-namespace mtb_race_api.Services
+using thumb_change_api.Models;
+
+namespace thumb_change_api.Services
 {
 	public interface IVideosService
 	{
-        Task GetVideosAsync();
+        Task<List<VideoInfo>> GetVideosAsync();
     }
 }
-

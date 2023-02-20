@@ -6,8 +6,9 @@ using Google.Apis.Upload;
 using Google.Apis.Util.Store;
 using Google.Apis.YouTube.v3;
 using Google.Apis.YouTube.v3.Data;
+using thumb_change_api.Models;
 
-namespace mtb_race_api.Services
+namespace thumb_change_api.Services
 {
 	public class VideosService : IVideosService
 	{
@@ -18,7 +19,7 @@ namespace mtb_race_api.Services
 			_httpClient = httpClient;
 		}
 
-		public async Task GetVideosAsync()
+		public async Task<List<VideoInfo>> GetVideosAsync()
 		{
 			UserCredential credential;
 			using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
@@ -31,7 +32,7 @@ namespace mtb_race_api.Services
 					"user",
 					CancellationToken.None,
 					new FileDataStore(this.GetType().ToString())
-        );
+				);
             }
 
 			var youTubeService = new YouTubeService(new BaseClientService.Initializer()
@@ -40,11 +41,13 @@ namespace mtb_race_api.Services
 				ApplicationName = this.GetType().ToString()
 			});
 
-			var channelsListRequest = youTubeService.Channels.List("contentDetials");
+			var channelsListRequest = youTubeService.Channels.List("contentDetails");
 			channelsListRequest.Mine = true;
 
             // Retrieve the contentDetails part of the channel resource for the authenticated user's channel.
             var channelsListResponse = await channelsListRequest.ExecuteAsync();
+
+			var videoInfoList = new List<VideoInfo>();
 
 			foreach (var channel in channelsListResponse.Items)
 			{
@@ -69,11 +72,20 @@ namespace mtb_race_api.Services
                     {
                         // Print information about each video.
                         Console.WriteLine("{0} ({1})", playlistItem.Snippet.Title, playlistItem.Snippet.ResourceId.VideoId);
+						var videoInfo = new VideoInfo
+						{
+							Name = playlistItem.Snippet.Title,
+							Id = playlistItem.Snippet.ResourceId.VideoId
+						};
+
+						videoInfoList.Add(videoInfo);
                     }
 
                     nextPageToken = playlistItemsListResponse.NextPageToken;
                 }
             }
+
+			return videoInfoList;
         }
 	}
 }
