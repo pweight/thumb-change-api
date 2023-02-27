@@ -21,7 +21,7 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Restore dependencies
-      run: dotnet restore thumb-change-api.sln
+      run: dotnet restore thumb-change-api/thumb-change-api.sln
     - name: Build
       run: dotnet build thumb-change-api.sln --no-restore
     - name: Test
